@@ -1,0 +1,250 @@
+/* ------------------- fonts --------------------------- */
+@font-face {
+	font-family: "LatoRegular";
+	src: url("../fonts/Lato-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "LatoBold";
+	src: url("../fonts/Lato-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "LatoBlack";
+	src: url("../fonts/Lato-Black.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MavenProRegular";
+	src: url("../fonts/MavenPro-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ------------------- global styles --------------------------- */
+*{	
+	box-sizing: border-box;
+}
+
+:root {
+    --blue: #2eb398;
+    --darkerblue: #20816d;
+    --grey: #323232;
+    --darkgrey: #222222;
+    --lightgrey: #454545;
+    --hex-transition: all .5s ease;
+  }
+
+body {
+	margin: 0;
+    padding: 0;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+.wrapperBody {
+	margin: 0 auto;	
+}
+
+h2, h3 {
+    font-family: "MavenProRegular", Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+a {
+	font: 10px "LatoBold";
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    color: white;    
+    overflow: hide;
+}
+
+article {
+    font: 12px "LatoRegular";
+    text-align: justify;
+}
+/* -------------------header style--------------------------- */
+header {
+    height: 63px;
+    width: 100%;
+    background: var(--grey);
+	user-select: none;
+}
+header::after {
+    content: '';
+    position: relative;
+    top: 25px;
+    left: calc(50% - 48px);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 26px 44px 0 44px; 
+    border-color: var(--grey) transparent transparent transparent;
+}
+
+nav {
+	display: flex;
+	height: 63px;
+    max-width: 370px;
+    margin: 0 auto;	
+	align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+nav a {
+    line-height: 63px;
+}
+
+nav a:hover {
+	color: var(--blue);
+}
+
+.arrow {
+    margin-top: 12px;
+    width: 55px;
+    height: 50px;    
+    background: white;
+    -webkit-clip-path: polygon(50% 15%, 100% 0, 50% 100%, 0 0);
+    clip-path: polygon(50% 15%, 100% 0, 50% 100%, 0 0);
+}
+
+.arrow::after {
+    content: '';
+    position: relative;
+    display: block;
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 51px;
+    height: 46px;    
+    background: var(--grey);
+    -webkit-clip-path: polygon(50% 15%, 100% 0, 50% 100%, 0 0);
+    clip-path: polygon(50% 15%, 100% 0, 50% 100%, 0 0);
+}
+
+/* ------------------- portfolio style--------------------------- */
+
+.portfolio {
+    height: 750px;
+    padding-top: 130px;
+}
+
+.hexcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: -35px;
+    margin-left: -5px;
+    overflow: hidden;
+}
+
+.hexcontainer img {
+    width: auto;
+    height: 206px;
+    -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    transition: var(--hex-transition);
+} 
+
+.portfolio img:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: var(--hex-transition);
+}
+/* ------------------- aboutMe style----------------------------- */
+
+.aboutMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 340px;
+    background: var(--blue);
+}
+
+.aboutMeContainer {
+    display: flex;    
+    justify-content: center;
+    width: 780px;
+    height: 206px;
+}
+
+.aboutMeContainer img {
+    position: relative;
+    left: -120px;
+    -webkit-clip-path: polygon(50% 0%, 71% 25%, 71% 75%, 50% 100%, 29% 75%, 29% 25%);
+    clip-path: polygon(50% 0%, 71% 25%, 71% 75%, 50% 100%, 29% 75%, 29% 25%);
+    margin: 0 5px;
+}
+
+.whoIam {
+    margin-left: -215px;
+}
+
+.aboutMe h3 {
+    color: var(--darkerblue);
+}
+
+/* ------------------- getInTouch style----------------------------- */
+
+.getInTouch {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 565px;
+    background: var(--grey);
+}
+
+.getInTouchHeading {
+    grid-area: heading;
+}
+
+.getInTouchForm {
+    grid-area: form;
+}
+
+.getInTouchInfo {
+    grid-area: info;
+}
+
+.getInTouchContainer {
+    display: grid;
+    grid-template:
+    [row1-start] "heading heading" auto [row1-end]
+    [row2-start] "form info" auto [row2-end]
+    / 75% auto;
+    width: 780px;
+    height: 435px;
+}
+
+input {
+    width: 95%;
+    margin: 0 15px 15px 0;
+    font: 12px "LatoRegular";
+    background: var(--lightgrey);
+    border: none;
+}
+
+input[type="text"], input[type="email"] {
+    height: 38px;
+}
+
+/* ------------------- footer style----------------------------- */
+
+footer {
+    height: 41px;
+    background: var(--darkgrey);
+}
