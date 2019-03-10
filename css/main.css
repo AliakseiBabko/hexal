@@ -230,16 +230,27 @@ nav a:hover {
     height: 435px;
 }
 
-input {
+input, textarea {    
     width: 95%;
     margin: 0 15px 15px 0;
-    font: 12px "LatoRegular";
+    padding-left: 10px;
     background: var(--lightgrey);
     border: none;
 }
 
-input[type="text"], input[type="email"] {
+input {
     height: 38px;
+}
+
+::placeholder {    
+    font: 12px "LatoRegular";
+    height: 38px;
+    color: whitesmoke;
+}
+
+textarea {
+    padding-top: 10px;
+    height: 150px;
 }
 
 /* ------------------- footer style----------------------------- */
