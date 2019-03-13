@@ -35,6 +35,12 @@
 :root {
     --blue: #2eb398;
     --darkerblue: #20816d;
+    --bluefacebook: #a4dbd4;
+    --bluetwitter: #6ccbbe;
+    --bluegoogle: #7ed0c5;
+    --bluepinterest: #abddd7;
+    --bluelinkedin: #acddd7;
+    --blueball: #6dcbbe;
     --grey: #323232;
     --darkgrey: #222222;
     --lightgrey: #454545;
@@ -51,9 +57,10 @@ body {
 	margin: 0 auto;	
 }
 
-h2, h3 {
+h2, h3, footer {
     font-family: "MavenProRegular", Helvetica, sans-serif;
-    margin: 0 auto;
+    font-weight: 400;
+    margin: 0 0;
 }
 
 h2 {
@@ -76,6 +83,16 @@ a {
 article {
     font: 12px "LatoRegular";
     text-align: justify;
+}
+
+article span {
+    font: 12px "LatoBlack";
+}
+
+address {
+    font: 12px "LatoBold";
+    font-style: normal;
+    margin-top: 70px;
 }
 /* -------------------header style--------------------------- */
 header {
@@ -176,10 +193,9 @@ nav a:hover {
 }
 
 .aboutMeContainer {
-    display: flex;    
-    justify-content: center;
     width: 780px;
-    height: 206px;
+    height: 206px;    
+    display: flex;
 }
 
 .aboutMeContainer img {
@@ -192,10 +208,60 @@ nav a:hover {
 
 .whoIam {
     margin-left: -215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.aboutMe h3 {
+.whoIam h3 {    
     color: var(--darkerblue);
+}
+
+.whoIam article {
+    margin-top: 10px;
+}
+
+.socialnetworks {
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+i {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+    color: var(--darkerblue);
+}
+
+i:hover {    
+    filter: hue-rotate(150deg);
+}
+
+.fa-facebook-f {
+    background-color: var(--bluefacebook);
+}
+
+.fa-twitter {
+    background-color: var(--bluetwitter);
+}
+
+.fa-google-plus-g {
+    background-color: var(--bluegoogle);
+}
+
+.fa-pinterest-p {
+    background-color: var(--bluepinterest);
+}
+
+.fa-linkedin-in {
+    background-color: var(--bluelinkedin);
+}
+
+.fa-basketball-ball {
+    background-color: var(--blueball);
 }
 
 /* ------------------- getInTouch style----------------------------- */
@@ -210,14 +276,22 @@ nav a:hover {
 
 .getInTouchHeading {
     grid-area: heading;
+    margin-bottom: 15px;
 }
 
 .getInTouchForm {
     grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .getInTouchInfo {
-    grid-area: info;
+    grid-area: info;    
+}
+
+.getInTouchInfo article {
+    line-height: 20px;
 }
 
 .getInTouchContainer {
@@ -226,26 +300,30 @@ nav a:hover {
     [row1-start] "heading heading" auto [row1-end]
     [row2-start] "form info" auto [row2-end]
     / 75% auto;
+    grid-column-gap: 20px;
     width: 780px;
     height: 435px;
 }
 
-input, textarea {    
-    width: 95%;
-    margin: 0 15px 15px 0;
-    padding-left: 10px;
-    background: var(--lightgrey);
+input, textarea, button, ::placeholder {        
+    font: 12px "LatoRegular";
+    color: white;    
     border: none;
 }
 
-input {
+input, textarea {  
+    width: 100%;
+    padding-left: 10px;
+    background: var(--lightgrey);
+}
+
+input, button {
     height: 38px;
 }
 
-::placeholder {    
+::-ms-input-placeholder {    
     font: 12px "LatoRegular";
-    height: 38px;
-    color: whitesmoke;
+    color: white;
 }
 
 textarea {
@@ -253,9 +331,23 @@ textarea {
     height: 150px;
 }
 
+button {
+    margin-left: auto;
+    margin-top: 15px;
+    width: 90px;
+    background: var(--blue);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 /* ------------------- footer style----------------------------- */
 
 footer {
+    padding-left: 40px;
+    line-height: 41px;
+    font-size: 12px;
     height: 41px;
     background: var(--darkgrey);
 }
