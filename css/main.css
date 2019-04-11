@@ -90,11 +90,6 @@ article span {
     font: 12px "LatoBlack";
 }
 
-address {
-    font: 11px "LatoBold";
-    font-style: normal;
-    margin-top: 40px;
-}
 /* -------------------header style--------------------------- */
 header {
     height: 63px;
@@ -182,6 +177,33 @@ nav a:hover {
     filter: grayscale(100%);
     cursor: pointer;
     transition: var(--hex-transition);
+}
+
+.sliderWrapper {
+    display: block;
+    height: 18px;
+    width: 960px;
+    margin: 62px auto 0 auto;
+    border-bottom: 1px solid lightgrey;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-around;
+    width: 53px;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #E8E3DB;
+}
+
+.dot:hover {
+    cursor: pointer;
+}
+
+.dot:nth-child(3) {
+    background: #B6B3B1;
 }
 /* ------------------- aboutMe style----------------------------- */
 
@@ -302,10 +324,20 @@ i:hover {
     grid-template:
     [row1-start] "heading heading" auto [row1-end]
     [row2-start] "form info" auto [row2-end]
-    / 75% auto;
-    grid-column-gap: 20px;
+    / 74% auto;
+    grid-column-gap: 18px;
     width: 780px;
-    height: 435px;
+    height: 438px;
+}
+
+address {
+    font: 11px "LatoBold";
+    font-style: normal;
+    margin-top: 40px;
+}
+
+address i {
+    text-align: left;
 }
 
 input, textarea, button, ::placeholder {        
