@@ -75,10 +75,8 @@ h3 {
 a {
 	font: 10px "LatoBold";
     text-decoration: none;
-    text-transform: uppercase;
     outline: none;
-    color: white;    
-    overflow: hide;
+    color: white;
 }
 
 article {
@@ -95,7 +93,6 @@ header {
     height: 63px;
     width: 100%;
     background: var(--grey);
-	user-select: none;
 }
 header::after {
     content: '';
@@ -120,7 +117,8 @@ nav {
 }
 
 nav a {
-    line-height: 63px;
+    line-height: 63px;    
+    text-transform: uppercase;
 }
 
 nav a:hover {
@@ -152,17 +150,22 @@ nav a:hover {
 /* ------------------- portfolio style--------------------------- */
 
 .portfolio {
-    height: 721px;
+    min-height: 721px;
+    overflow-x: auto;
     padding-top: 130px;
 }
 
 .hexcontainer {
     display: flex;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
     margin-top: -35px;
-    margin-left: -5px;
-    overflow: hidden;
+}
+
+@media screen and (max-width: 1020px) {
+    .hexcontainer {
+        margin-left: calc((1020px - 100vw)/2);
+    }
 }
 
 .hexcontainer img {
@@ -182,7 +185,7 @@ nav a:hover {
 .sliderWrapper {
     display: block;
     height: 18px;
-    width: 960px;
+    max-width: 960px;
     margin: 62px auto 0 auto;
     border-bottom: 1px solid lightgrey;
 }
@@ -211,7 +214,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 340px;
+    min-height: 340px;
     background: var(--blue);
 }
 
@@ -241,7 +244,12 @@ nav a:hover {
     
 }
 
-.whoIam article {
+article.whoIam {
+    max-height: 340px;
+    overflow: auto;
+}
+
+.whoIam p {
     margin-top: 5px;
     line-height: 21px;
 }
